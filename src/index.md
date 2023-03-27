@@ -23,3 +23,7 @@ features:
     details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
 
+<script lang="ts" setup>
+  import HomeIndex from './components/home/Index.vue'
+</script>
+<HomeIndex/>

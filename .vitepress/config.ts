@@ -8,7 +8,12 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
+      { text: 'Examples', link: '/markdown-examples' },
+      {
+        text: '登录',
+        link: 'https://api.jslang.cn/github/authorize?redirect_uri=http://localhost:8787',
+        target: '_self',
+      },
     ],
 
     sidebar: [
@@ -22,8 +27,13 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/jslangcn/jslang.cn' }
+      { icon: 'github', link: 'https://github.com/jslangcn/jslang.cn' },
     ]
   },
-  srcDir: './src'
+  srcDir: './src',
+  vite: {
+    server: {
+      port: 8787
+    }
+  }
 })

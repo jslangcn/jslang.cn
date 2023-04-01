@@ -5,28 +5,28 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import React from 'react';
-import clsx from 'clsx';
+import React from "react";
+import clsx from "clsx";
 
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import {
   PageMetadata,
   HtmlClassNameProvider,
   ThemeClassNames,
-} from '@docusaurus/theme-common';
-import BlogLayout from '@theme/BlogLayout';
-import BlogListPaginator from '@theme/BlogListPaginator';
-import SearchMetadata from '@theme/SearchMetadata';
-import type {Props} from '@theme/BlogListPage';
-import BlogPostItems from '@theme/BlogPostItems';
+} from "@docusaurus/theme-common";
+import BlogLayout from "@theme/BlogLayout";
+import BlogListPaginator from "@theme/BlogListPaginator";
+import SearchMetadata from "@theme/SearchMetadata";
+import type { Props } from "@theme/BlogListPage";
+import BlogPostItems from "@theme/BlogPostItems";
 
 function BlogListPageMetadata(props: Props): JSX.Element {
-  const {metadata} = props;
+  const { metadata } = props;
   const {
-    siteConfig: {title: siteTitle},
+    siteConfig: { title: siteTitle },
   } = useDocusaurusContext();
-  const {blogDescription, blogTitle, permalink} = metadata;
-  const isBlogOnlyMode = permalink === '/';
+  const { blogDescription, blogTitle, permalink } = metadata;
+  const isBlogOnlyMode = permalink === "/";
   const title = isBlogOnlyMode ? siteTitle : blogTitle;
   return (
     <>
@@ -37,7 +37,7 @@ function BlogListPageMetadata(props: Props): JSX.Element {
 }
 
 function BlogListPageContent(props: Props): JSX.Element {
-  const {metadata, items, sidebar} = props;
+  const { metadata, items, sidebar } = props;
   return (
     <BlogLayout sidebar={sidebar}>
       <BlogPostItems items={items} />
@@ -51,8 +51,9 @@ export default function BlogListPage(props: Props): JSX.Element {
     <HtmlClassNameProvider
       className={clsx(
         ThemeClassNames.wrapper.blogPages,
-        ThemeClassNames.page.blogListPage,
-      )}>
+        ThemeClassNames.page.blogListPage
+      )}
+    >
       <BlogListPageMetadata {...props} />
       <BlogListPageContent {...props} />
     </HtmlClassNameProvider>

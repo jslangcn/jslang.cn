@@ -1,0 +1,33 @@
+.article {
+  display: flex;
+}
+
+.avatar__photo {
+  border-radius: 0
+}
+
+.avatar__intro {
+  display: inline-flex;
+}
+
+.avatar__subtitle {
+  display: none;
+}
+
+.content {
+  flex: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.title {}
+
+.tags {
+  display: inline;
+}
+
+.tag {
+  margin: 0 0.4rem 0.5rem 0;
+  display: inline-block;
+}

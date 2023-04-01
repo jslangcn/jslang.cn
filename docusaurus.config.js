@@ -28,8 +28,8 @@ const config = {
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'zh-Hans',
+    locales: ['zh-Hans'],
   },
 
   presets: [
@@ -134,6 +134,18 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
+    plugins:[
+      [
+        '@docusaurus/plugin-content-blog',
+        {         
+          id: 'question',         
+          routeBasePath: 'question',
+          path: './question',
+          blogSidebarCount:0,
+          blogListComponent: require.resolve('./src/components/QuestionListPage/index.tsx'),
+        },
+      ],
+    ]
 };
 
 module.exports = config;

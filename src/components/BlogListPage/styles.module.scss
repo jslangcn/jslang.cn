@@ -1,5 +1,6 @@
 .article {
   display: flex;
+  border-bottom: 1px solid var(--ifm-toc-border-color);
 }
 
 .avatar {
@@ -19,6 +20,11 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+}
+
+.comments{
+  display: flex;
+  align-items: center;
 }
 
 .tags {

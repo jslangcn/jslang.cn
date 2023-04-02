@@ -52,7 +52,7 @@ const config = {
             'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
         },
         theme: {
-          customCss: require.resolve('./src/css/custom.css'),
+          customCss: require.resolve('./src/css/custom.scss'),
         },
       }),
     ],
@@ -76,7 +76,7 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          { to: '/blog', label: 'Blog', position: 'left' },
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
@@ -134,19 +134,29 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
-    plugins:[
-      'docusaurus-plugin-sass',
-      [
-        '@docusaurus/plugin-content-blog',
-        {         
-          id: 'question',         
-          routeBasePath: 'question',
-          path: './question',
-          blogSidebarCount:0,
-          blogListComponent: require.resolve('./src/components/QuestionListPage/index.tsx'),
-        },
-      ],
-    ]
+  plugins: [
+    'docusaurus-plugin-sass',
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        id: 'question',
+        routeBasePath: 'question',
+        path: './question',
+        // blogSidebarCount:0,
+        blogListComponent: require.resolve('./src/components/BlogListPage/index.tsx'),
+      },
+    ],
+  ],
+  customFields: {
+    createQuestion: {
+      url: '/',
+      label: '+新问题'
+    },
+    createPost: {
+      url: '/',
+      label: '+新文章'
+    }
+  }
 };
 
 module.exports = config;

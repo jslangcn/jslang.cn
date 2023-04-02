@@ -64,6 +64,9 @@ function BlogPostItem(props: any) {
   const { frontMatter, assets, metadata } = props;
   const { withBaseUrl } = useBaseUrlUtils();
   const image = assets.image ?? frontMatter.image;
+  const comments = frontMatter.comments;
+
+  console.log(metadata);
   return (
     <article
       className={clsx("margin-bottom--lg", styles.article)}
@@ -88,14 +91,16 @@ function BlogPostItem(props: any) {
           <BlogPostItemTags {...metadata} />
         </div>
       </div>
-      <div>
-        <span
-          itemProp="interactionCount"
-          className={clsx("badge", "badge--secondary")}
-        >
-          1
-        </span>
-      </div>
+      {comments && (
+        <div className={clsx(styles.comments)}>
+          <span
+            itemProp="interactionCount"
+            className={clsx("badge", "badge--secondary")}
+          >
+            {comments}
+          </span>
+        </div>
+      )}
     </article>
   );
 }

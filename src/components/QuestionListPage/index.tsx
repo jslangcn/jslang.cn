@@ -22,7 +22,7 @@ import { useBaseUrlUtils } from "@docusaurus/useBaseUrl";
 import Link, { type Props as LinkProps } from "@docusaurus/Link";
 import Tag from "@theme/Tag";
 
-import styles from "./styles.module.css";
+import styles from "./styles.module.scss";
 
 function BlogListPageMetadata(props: Props): JSX.Element {
   const { metadata } = props;
@@ -89,7 +89,12 @@ function BlogPostItem(props: any) {
         </div>
       </div>
       <div>
-        1
+        <span
+          itemProp="interactionCount"
+          className={clsx("badge", "badge--secondary")}
+        >
+          1
+        </span>
       </div>
     </article>
   );
@@ -123,19 +128,19 @@ function BlogPostItemAuthor(props: any) {
     <>
       {name && (
         <span
-          className={clsx("avatar__intro",styles.avatar__intro)}
+          className={clsx("avatar__intro", styles.avatar__intro)}
           itemProp="author"
           itemScope
           itemType="https://schema.org/Person"
         >
-          <span className="avatar__name">
+          <span className={clsx("avatar__name", styles.avatar__name)}>
             <MaybeLink href={link} itemProp="url">
               <span itemProp="name">{name}</span>
             </MaybeLink>
           </span>
           {title && (
             <small
-              className={clsx("avatar__subtitle", styles.avatar__subtitle)}
+              className={clsx("avatar__subtitle", "screen-reader-only")}
               itemProp="description"
             >
               {title}
@@ -159,7 +164,7 @@ function BlogPostItemTitle(props: any) {
 }
 
 function BlogPostItemInfo(props: any) {
-  const { date, formattedDate, readingTime } = props;
+  const { date, formattedDate } = props;
 
   return (
     <time dateTime={date} itemProp="datePublished">

@@ -2,26 +2,24 @@
   display: flex;
 }
 
-.avatar__photo {
-  border-radius: 0
-}
+.avatar {
+  &__photo {
+    border-radius: 0;
+  }
 
-.avatar__intro {
-  display: inline-flex;
+  &__intro {
+    display: inline-flex;
+  }
+  &__name {
+    font-weight: normal;
+  }
 }
-
-.avatar__subtitle {
-  display: none;
-}
-
 .content {
   flex: 1;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
-
-.title {}
 
 .tags {
   display: inline;

@@ -3,23 +3,24 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const cfgTitle = 'JsLang'
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: cfgTitle,
+  tagline: '前端语言',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-test-site.com',
+  url: 'https://jslang.cn',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'jslangcn', // Usually your GitHub org/user name.
+  projectName: 'jslang.cn', // Usually your repo name.
 
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -40,16 +41,17 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          // Remove this to remove the "edit this page" links.          
+          editUrl: 'https://github.com/jslangcn/jslang.cn',
         },
         blog: {
+          blogTitle: '博文',
+          blogDescription: '博文',
+          blogSidebarTitle: '最新博文',
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          // editUrl: ''
         },
         theme: {
           customCss: require.resolve('./src/css/custom.scss'),
@@ -64,9 +66,9 @@ const config = {
       // Replace with your project's social card
       image: 'img/docusaurus-social-card.jpg',
       navbar: {
-        title: 'My Site',
+        title: cfgTitle,
         logo: {
-          alt: 'My Site Logo',
+          alt: `${cfgTitle} Logo`,
           src: 'img/logo.svg',
         },
         items: [
@@ -77,57 +79,26 @@ const config = {
             label: 'Tutorial',
           },
           { to: '/blog', label: 'Blog', position: 'left' },
+          { to: '/question', label: 'Question', position: 'left' },
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
+            href: 'https://github.com/jslangcn/jslang.cn',
             position: 'right',
+            className: 'header-github-link',
+            'aria-label': 'GitHub repository',
           },
         ],
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: 'Docs',
-            items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        logo: {
+          alt: '微信扫一扫关注该公众号',
+          src: 'https://open.weixin.qq.com/qr/code?username=lzwdotcom',
+          href: '#',
+          width: 129,
+          height: 129,
+        },
+        links: [],
+        copyright: `Copyright © ${new Date().getFullYear()} -present Lzw.`,
       },
       prism: {
         theme: lightCodeTheme,
@@ -142,8 +113,10 @@ const config = {
         id: 'question',
         routeBasePath: 'question',
         path: './question',
-        // blogSidebarCount:0,
         blogListComponent: require.resolve('./src/components/BlogListPage/index.tsx'),
+        blogTitle: '问答',
+        blogDescription: '问答',
+        blogSidebarTitle: '最新问答',
       },
     ],
   ],

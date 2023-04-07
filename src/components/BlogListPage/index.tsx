@@ -64,7 +64,7 @@ function BlogPostItem(props: any) {
   const { frontMatter, assets, metadata } = props;
   const { withBaseUrl } = useBaseUrlUtils();
   const image = assets.image ?? frontMatter.image;
-  const comments = frontMatter.comments;
+  const comments = frontMatter.comments || false;
 
   console.log(metadata);
   return (

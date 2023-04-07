@@ -72,14 +72,9 @@ const config = {
           src: 'img/logo.svg',
         },
         items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Tutorial',
-          },
-          { to: '/blog', label: 'Blog', position: 'left' },
-          { to: '/question', label: 'Question', position: 'left' },
+          { to: '/docs', label: '文档', position: 'left' },
+          { to: '/blog', label: '博文', position: 'left' },
+          { to: '/question', label: '问答', position: 'left' },
           {
             href: 'https://github.com/jslangcn/jslang.cn',
             position: 'right',

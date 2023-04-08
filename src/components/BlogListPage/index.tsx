@@ -65,8 +65,7 @@ function BlogPostItem(props: any) {
   const { withBaseUrl } = useBaseUrlUtils();
   const image = assets.image ?? frontMatter.image;
   const comments = frontMatter.comments || false;
-
-  console.log(metadata);
+ 
   return (
     <article
       className={clsx("margin-bottom--lg", styles.article)}

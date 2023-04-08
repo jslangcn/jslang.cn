@@ -13,7 +13,7 @@
     },
     "comments": 0,
     "description": "",
-    "content": "# 块状元素 &amp; 内联元素\r\n\r\n**块状元素，独占一行**\r\n\r\ndisplay:block/table；有 div h1 h2 table ul ol p等\r\n\r\n**内联元素，非独占一行**\r\n\r\ndisplay:inline/inline-block；有span img input button等\r\n "
+    "content": "**块状元素，独占一行**\r\n\r\ndisplay:block/table；有 div h1 h2 table ul ol p等\r\n\r\n**内联元素，非独占一行**\r\n\r\ndisplay:inline/inline-block；有span img input button等\r\n "
   },
   {
     "id": 1,

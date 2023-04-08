@@ -2,10 +2,32 @@ import React from 'react';
 import clsx from 'clsx';
 import Link from '@docusaurus/Link';
 import { translate } from '@docusaurus/Translate';
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import { useLocation } from '@docusaurus/router';
+
 import styles from './styles.module.css';
+
 export default function BlogSidebarDesktop({ sidebar }) {
+  const { siteConfig: { customFields } } = useDocusaurusContext();
+  const location = useLocation();
+
+  let createUrl = '';
+  let createLabel = '';
+  if (customFields['createQuestion'] || customFields['createPost']) {
+    const createField = location.pathname.indexOf('question') == 1 ? customFields['createQuestion'] : customFields['createPost']
+    createUrl = createField.url
+    createLabel = createField.label
+  }
+
   return (
     <aside className="col" style={{ paddingLeft: 0 }}>
+      {createUrl && createLabel && <Link
+        className="col button button--primary margin-bottom--lg shadow--lw"
+        itemProp="url"
+        to={createUrl}
+      >
+        {createLabel}
+      </Link>}
       <nav
         className={clsx(styles.sidebar, 'thin-scrollbar')}
         aria-label={translate({

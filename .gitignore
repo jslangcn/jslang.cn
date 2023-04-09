@@ -22,3 +22,4 @@ yarn-error.log*
 # dir
 /blog/*
 /question/*
+!.gitkeep

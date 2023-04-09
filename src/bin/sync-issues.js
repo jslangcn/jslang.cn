@@ -4,7 +4,7 @@ const path = require('path')
 const shelljs = require('shelljs');
 
 const sleep = seconds => { return new Promise(resolve => { setTimeout(resolve, seconds) }) }
-const octokit = new Octokit({ auth: "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" })
+const octokit = new Octokit({ auth: "" })
 const dataDir = path.join(__dirname, '..', './data');
 
 // data

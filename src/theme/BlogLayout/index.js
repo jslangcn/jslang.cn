@@ -10,9 +10,9 @@ export default function BlogLayout(props) {
   return (
     <Layout {...layoutProps}>
       <div className="container margin-vert--lg">
-        <div className="row">
+        <div className="row" style={{justifyContent:'center'}}>
           <main
-            className={clsx('col', 'col--9')}
+            className={clsx('col', 'col--8')}
             itemScope
             itemType="http://schema.org/Blog">
             {children}

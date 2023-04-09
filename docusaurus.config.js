@@ -3,12 +3,12 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const cfgTitle = 'JsLang'
+const cfgTitle = '前端语言'
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: cfgTitle,
-  tagline: '前端语言',
+  tagline: '前端开发网站',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -17,7 +17,7 @@ const config = {
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
 
-  // GitHub pages deployment config.
+  // GitHub pages deployment config. 
   // If you aren't using GitHub pages, you don't need these.
   organizationName: 'jslangcn', // Usually your GitHub org/user name.
   projectName: 'jslang.cn', // Usually your repo name.
@@ -64,7 +64,7 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/logo.png',
       navbar: {
         title: cfgTitle,
         logo: {
@@ -84,16 +84,9 @@ const config = {
         ],
       },
       footer: {
-        style: 'dark',
-        logo: {
-          alt: '微信扫一扫关注该公众号',
-          src: 'https://open.weixin.qq.com/qr/code?username=lzwdotcom',
-          href: '#',
-          width: 129,
-          height: 129,
-        },
+        style: 'dark',        
         links: [],
-        copyright: `Copyright © ${new Date().getFullYear()} -present Lzw.`,
+        copyright: `Copyright © ${new Date().getFullYear()} -present Jslang.`,
       },
       prism: {
         theme: lightCodeTheme,

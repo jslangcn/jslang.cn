@@ -15,8 +15,13 @@
     font-weight: normal;
   }
 }
+
 .content {
-  flex: 1;
+  flex: 1;  
+  overflow: hidden;
+}
+
+.title{
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;

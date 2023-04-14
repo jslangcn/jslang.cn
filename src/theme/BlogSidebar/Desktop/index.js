@@ -14,9 +14,9 @@ export default function BlogSidebarDesktop({ sidebar }) {
   let createUrl = '';
   let createLabel = '';
   if (customFields['createQuestion'] || customFields['createPost']) {
-    const createField = location.pathname.indexOf('question') == 1 ? customFields['createQuestion'] : customFields['createPost']
-    createUrl = createField.url
-    createLabel = createField.label
+    const createField = location.pathname.indexOf('question') == 1 ? customFields['createQuestion'] : customFields['createPost'];
+    createUrl = createField.url ? `https://github.com/${createField.url}/issues` : '';
+    createLabel = createField.label;
   }
 
   return (

@@ -110,11 +110,11 @@ const config = {
   ],
   customFields: {
     createQuestion: {
-      url: '/',
+      url: 'jslangcn/_questions',
       label: '+新问题'
     },
     createPost: {
-      url: '/',
+      url: 'jslangcn/_posts',
       label: '+新文章'
     }
   }

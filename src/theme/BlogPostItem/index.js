@@ -9,12 +9,22 @@ export default function BlogPostItemWrapper(props) {
   const { isBlogPostPage, metadata } = useBlogPost()
   const { frontMatter, permalink } = metadata
   const location = useLocation();
-  const { siteConfig: { customFields } } = useDocusaurusContext();
-  const githubRepo = location.pathname.indexOf('question') == 1 ? customFields['createQuestion']?.url : customFields['createPost']?.url;
+  const { siteConfig: { organizationName,customFields } } = useDocusaurusContext();
+  const githubRepo =
+    location.pathname.indexOf("question") == 1
+      ? customFields["createQuestion"]?.repo
+      : customFields["createPost"]?.repo;
   return (
     <>
       <BlogPostItem {...props} />
-      {(isBlogPostPage && githubRepo) && <Comments {...{ repo: githubRepo, issueNumber: frontMatter.ID }} />}
+      {isBlogPostPage && organizationName && githubRepo && (
+        <Comments
+          {...{
+            repo: `${organizationName}/${githubRepo}`,
+            issueNumber: frontMatter.ID,
+          }}
+        />
+      )}
     </>
   );
 }

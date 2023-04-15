@@ -8,14 +8,14 @@ import { useLocation } from '@docusaurus/router';
 import styles from './styles.module.css';
 
 export default function BlogSidebarDesktop({ sidebar }) {
-  const { siteConfig: { customFields } } = useDocusaurusContext();
+  const { siteConfig: {organizationName, customFields } } = useDocusaurusContext();
   const location = useLocation();
 
   let createUrl = '';
   let createLabel = '';
   if (customFields['createQuestion'] || customFields['createPost']) {
     const createField = location.pathname.indexOf('question') == 1 ? customFields['createQuestion'] : customFields['createPost'];
-    createUrl = createField.url ? `https://github.com/${createField.url}/issues` : '';
+    createUrl = createField.repo ? `https://github.com/${organizationName}/${createField.repo}/issues` : '';
     createLabel = createField.label;
   }
 

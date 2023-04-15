@@ -27,5 +27,5 @@ export default function Comments(props: { repo: any; issueNumber: any }) {
     }
   }, [theme]);
 
-  return <div className={clsx('margin-top--xl',styles.comments)} ref={commentsRef}></div>;
+  return <div className={clsx('margin-top--lg',styles.comments)} ref={commentsRef}></div>;
 }

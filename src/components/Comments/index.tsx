@@ -3,7 +3,6 @@ import { useColorMode } from "@docusaurus/theme-common";
 
 import styles from "./styles.module.scss";
 import clsx from "clsx";
-import BrowserOnly from "@docusaurus/BrowserOnly";
 
 export default function Comments(props: { repo: any; issueNumber: any }) {
   const { colorMode } = useColorMode();
@@ -13,13 +12,16 @@ export default function Comments(props: { repo: any; issueNumber: any }) {
   const issueNumber = props.issueNumber;
   const theme = `github-${colorMode}`;
 
-  const scriptEl = document.createElement("script");
-  scriptEl.src = "https://utteranc.es/client.js";
-  scriptEl.async = true;
-  scriptEl.setAttribute("repo", repo);
-  scriptEl.setAttribute("theme", theme);
-  scriptEl.setAttribute("issue-number", issueNumber);
-  scriptEl.setAttribute("crossorigin", "anonymous");
+  let scriptEl: HTMLScriptElement;
+  try{
+    scriptEl = document.createElement("script");
+    scriptEl.src = "https://utteranc.es/client.js";
+    scriptEl.async = true;
+    scriptEl.setAttribute("repo", repo);
+    scriptEl.setAttribute("theme", theme);
+    scriptEl.setAttribute("issue-number", issueNumber);
+    scriptEl.setAttribute("crossorigin", "anonymous");
+  }catch{}
 
   useEffect(() => {
     if (commentsRef.current) {
@@ -28,16 +30,5 @@ export default function Comments(props: { repo: any; issueNumber: any }) {
     }
   }, [theme]);
 
-  return (
-    <>
-      <BrowserOnly>
-        {() => (
-          <div
-            className={clsx("margin-top--lg", styles.comments)}
-            ref={commentsRef}
-          ></div>
-        )}
-      </BrowserOnly>
-    </>
-  );
+  return <div className={clsx('margin-top--lg',styles.comments)} ref={commentsRef}></div>;
 }

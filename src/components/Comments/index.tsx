@@ -3,6 +3,7 @@ import { useColorMode } from "@docusaurus/theme-common";
 
 import styles from "./styles.module.scss";
 import clsx from "clsx";
+import BrowserOnly from "@docusaurus/BrowserOnly";
 
 export default function Comments(props: { repo: any; issueNumber: any }) {
   const { colorMode } = useColorMode();
@@ -27,5 +28,16 @@ export default function Comments(props: { repo: any; issueNumber: any }) {
     }
   }, [theme]);
 
-  return <div className={clsx('margin-top--lg',styles.comments)} ref={commentsRef}></div>;
+  return (
+    <>
+      <BrowserOnly>
+        {() => (
+          <div
+            className={clsx("margin-top--lg", styles.comments)}
+            ref={commentsRef}
+          ></div>
+        )}
+      </BrowserOnly>
+    </>
+  );
 }

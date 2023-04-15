@@ -135,6 +135,16 @@ const config = {
       label: "+新文章",
     },
   },
+  themes: [    
+    [
+      "@easyops-cn/docusaurus-search-local",
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      ({
+        blogRouteBasePath:["/blog","/question"],
+        blogDir:["/blog","/question"]
+      }),
+    ]
+  ],
 };
 
 module.exports = config;
